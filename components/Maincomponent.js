@@ -1,6 +1,8 @@
 import React , {Component} from 'react';
 import {View, Platform} from 'react-native';
-import Home from './HomeComponent'
+import Home from './HomeComponent';
+import Contact from './Contact';
+import About from './AboutUs'
 import Menu from '../components/MenuComponent';
 import DishDetail from './DishDetail'
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
@@ -39,6 +41,38 @@ const HomeNavigator = createStackNavigator({
     }
 }
 );
+const ContactNavigator = createStackNavigator({
+    Contact: { screen: Contact },
+},
+{
+    
+    navigationOptions: {
+        headerStyle: {
+            backgroundColor: "#512DA8"
+        },
+        headerTintColor: 'white',
+        headerTitleStyle: {
+            color: "white"            
+        }
+    }
+}
+);
+const AboutNavigator = createStackNavigator({
+    About: { screen: About },
+},
+{
+    
+    navigationOptions: {
+        headerStyle: {
+            backgroundColor: "#512DA8"
+        },
+        headerTintColor: 'white',
+        headerTitleStyle: {
+            color: "white"            
+        }
+    }
+}
+);
 
 const MainNavigator = createDrawerNavigator({
     Home: 
@@ -46,6 +80,20 @@ const MainNavigator = createDrawerNavigator({
         navigationOptions: {
           title: 'Home',
           drawerLabel: 'Home'
+        }
+      },
+    Contact: 
+      { screen: ContactNavigator,
+        navigationOptions: {
+          title: 'Contact',
+          drawerLabel: 'Contact'
+        }
+      },
+    About: 
+      { screen: AboutNavigator,
+        navigationOptions: {
+          title: 'About',
+          drawerLabel: 'About'
         }
       },
     Menu: 
