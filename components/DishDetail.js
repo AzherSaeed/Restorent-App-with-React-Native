@@ -13,7 +13,7 @@ const RenderDish = (props) => {
                  image={require('./images/uthappizza.png')}>
                 <Text style={{ margin : 10 }}>{dish.description}</Text>
                 <Icon name={props.favorites ? 'heart' : 'heart-o'} type='font-awesome' reverse raised  color='#f50' 
-                    onPress={() => props.favorites ? alert('Already Your Favorite Dish') : props.onPress(alert('Added Your Favorite Dish'))}
+                    onPress={() => props.favorites ? alert('Already Your Favorite ') : props.onPress(alert('Added Your Favorite Dish'))}
                 />
            </Card>
        )
